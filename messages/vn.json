@@ -1,0 +1,32 @@
+{
+    "HomePage": {
+        "title": "Trang chủ"
+    },
+    "Languages": {
+        "VN": "VN",
+        "vietnamese": "Tiếng Việt",
+        "EN": "EN",
+        "english": "Tiếng Anh"
+    },
+    "Authentication": {
+        "login": "Đăng nhập",
+        "emailLabel": "Email",
+        "emailInvalid": "Địa chỉ email không hợp lệ",
+        "emailRequired": "Email là bắt buộc",
+        "passwordLabel": "Mật khẩu",
+        "passwordMin": "Mật khẩu phải có ít nhất 6 ký tự",
+        "passwordRequired": "Mật khẩu là bắt buộc",
+        "termsLabel": "Tôi đồng ý với Điều khoản & Dịch vụ",
+        "termsRequired": "Bạn phải đồng ý với điều khoản",
+        "forgotPassword": "Quên mật khẩu?",
+        "loginWithGoogle": "Đăng nhập bằng Google",
+        "submit": "Gửi",
+        "register": "Đăng ký",
+        "usernameLabel": "Tên đăng nhập",
+        "usernameMin": "Tên đăng nhập phải có ít nhất 2 ký tự",
+        "usernameRequired": "Tên đăng nhập là bắt buộc",
+        "confirmPasswordLabel": "Xác nhận mật khẩu",
+        "passwordsMustMatch": "Mật khẩu không khớp",
+        "confirmPasswordRequired": "Vui lòng xác nhận mật khẩu"
+    }
+}

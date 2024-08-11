@@ -1,0 +1,32 @@
+{
+    "HomePage": {
+        "title": "Home page"
+    },
+    "Languages": {
+        "VN": "VN",
+        "vietnamese": "Vietnamese",
+        "EN": "EN",
+        "english": "English"
+    },
+    "Authentication": {
+        "login": "Login",
+        "emailLabel": "Email",
+        "emailInvalid": "Invalid email address",
+        "emailRequired": "Email is required",
+        "passwordLabel": "Password",
+        "passwordMin": "Password must be at least 6 characters",
+        "passwordRequired": "Password is required",
+        "termsLabel": "I agree to the Terms & Service",
+        "termsRequired": "You must agree to the terms",
+        "forgotPassword": "Forgot Password?",
+        "loginWithGoogle": "Login with Google",
+        "submit": "Submit",
+        "register": "Register",
+        "usernameLabel": "Username",
+        "usernameMin": "Username must be at least 2 characters",
+        "usernameRequired": "Username is required",
+        "confirmPasswordLabel": "Confirm Password",
+        "passwordsMustMatch": "Passwords must match",
+        "confirmPasswordRequired": "Please confirm your password"
+    }
+}
