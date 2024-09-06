@@ -1,6 +1,7 @@
 {
     "HomePage": {
-        "title": "Trang chủ"
+        "new": "Mới",
+        "following": "Đang theo dõi"
     },
     "Languages": {
         "languages": "Ngôn ngữ",
@@ -74,6 +75,10 @@
         "URL": "URL",
         "description": "Mô tả",
         "post": "Đăng tải"
+    },
+    "Post": {
+        "report": "Báo cáo",
+        "copyLink": "Sao chép liên kết"
     },
     "TermsOfService": {
         "termsOfService": "Điều khoản Dịch vụ",

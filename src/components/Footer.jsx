@@ -6,7 +6,7 @@ export default function Footer() {
     const t = useTranslations('Footer')
     return (
         <div className="w-full h-auto flex justify-center items-center border-t">
-            <div className="w-full h-full max-w-[1000px] flex justify-between items-start pt-10 pb-10 sm:flex-row flex-col gap-5 pl-2 pr-2">
+            <div className="w-full h-full max-w-[1200px] flex justify-between items-start pt-10 pb-10 sm:flex-row flex-col gap-5 pl-2 pr-2">
                 <div className="flex flex-col text-4xl font-semibold">
                     <label>
                         MAKE
@@ -18,7 +18,7 @@ export default function Footer() {
                         EASY & SIMPLE
                     </label>
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col gap-2">
                     <Link href={`/mybes`}>{t('introduction')}</Link>
                     <Link href={`/`}>{t('home')}</Link>
                     <Link href={`/about`}>{t('about')}</Link>

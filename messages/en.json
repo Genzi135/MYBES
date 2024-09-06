@@ -1,6 +1,7 @@
 {
     "HomePage": {
-        "title": "Home page"
+        "new": "New",
+        "following": "Following"
     },
     "Languages": {
         "languages": "Languages",
@@ -74,6 +75,10 @@
         "URL": "URL",
         "description": "Description",
         "post": "Post"
+    },
+    "Post": {
+        "report": "Report",
+        "copyLink": "Copy link"
     },
     "TermsOfService": {
         "termsOfService": "Terms of Service",
