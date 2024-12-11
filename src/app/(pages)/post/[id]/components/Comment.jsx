@@ -77,7 +77,7 @@ export default function Comment({ data }) {
 
                     {/* Dropdown */}
                     <div className="dropdown dropdown-end">
-                        {currentUser && <div tabIndex={0} className="rounded-full p-2 hover:bg-gray-200 cursor-pointer">
+                        {currentUser && canDelete && <div tabIndex={0} className="rounded-full p-2 hover:bg-gray-200 cursor-pointer">
                             <BsThreeDotsVertical size={18} />
                         </div>}
                         <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
@@ -92,7 +92,7 @@ export default function Comment({ data }) {
                                     </div>
                                 </li>
                             )}
-                            <li>
+                            {/* <li>
                                 <div
                                     onClick={() => handleReportButtonClick(data.id)}
                                     className="flex justify-start items-center gap-2 text-yellow-500 cursor-pointer"
@@ -100,7 +100,7 @@ export default function Comment({ data }) {
                                     <BsExclamationTriangle size={20} />
                                     {t('report')}
                                 </div>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>

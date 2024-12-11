@@ -157,7 +157,7 @@ export default function ProfilePage() {
 
             {viewState && viewState === 'profile' && <div className="w-full">
                 {!userData?.page?.body?.length <= 0 ? (userData?.page?.body.map((e, index) => (
-                    <RenderComponent id={e.id} key={index} props={e.props} />
+                    <RenderComponent id={e.id} key={index} props={e.props} color={userData?.color} />
                 ))) : (
                     <div className="w-full h-full mt-4">
                         <Image src={BACKGROUND_IMAGE} alt="default background" width={'100%'} height={'100%'} className="opacity-25" />

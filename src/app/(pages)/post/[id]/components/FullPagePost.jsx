@@ -99,7 +99,7 @@ export default function PostFullPage() {
                     <div className="flex justify-between items-center w-full">
                         <div className="flex justify-center items-center gap-4 pr-4 rounded">
                             <div className="avatar">
-                                <div tabIndex={0} role="button" className="w-14 h-14 rounded-md bg-gray-100">
+                                <div tabIndex={0} role="button" className="w-14 h-14 rounded-full bg-gray-100">
                                     <img src={postData.author.avatar_url} width={20} height={20} alt="avatar" />
                                 </div>
                             </div>

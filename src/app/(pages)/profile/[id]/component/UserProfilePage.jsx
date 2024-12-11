@@ -110,7 +110,7 @@ export default function ProfilePage() {
                 <div className="w-full">
                     {userData?.page?.body?.length > 0 ? (
                         userData.page.body.map((e, index) => (
-                            <RenderComponent id={e.id} key={index} props={e.props} />
+                            <RenderComponent id={e.id} key={index} props={e.props} color={userData?.color} />
                         ))
                     ) : (
                         <div className="w-full h-full mt-4">

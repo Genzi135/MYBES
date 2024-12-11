@@ -6,7 +6,13 @@ import BreakerStar from "./breaker/BreakerStar";
 import BreakerText from "./breaker/BreakerText";
 import BreakerTextColor from "./breaker/BreakerTextColor";
 import CardX3 from "./CardX3";
+import ContentCenter from "./ContentCenter";
+import ContentLeft from "./ContentLeft";
+import ContentRight from "./ContentRight";
 import ThreeRoundImage from "./ThreeRoundImage";
+import VideoCenter from "./VIdeoCenter";
+import VideoLeft from "./VideoLeft";
+import VideoRight from "./VideoRight";
 import WhiteTitleAndImageBackground from "./WhiteTitleAndImageBackground";
 
 export default function RenderComponent({ id, props, color }) {
@@ -31,6 +37,18 @@ export default function RenderComponent({ id, props, color }) {
             return <BreakerText props={props} />
         case "BreakerTextColor":
             return <BreakerTextColor props={props} color={color} />
+        case "VideoRight":
+            return <VideoRight props={props} color={color} />
+        case "VideoLeft":
+            return <VideoLeft props={props} color={color} />
+        case "VideoCenter":
+            return <VideoCenter props={props} color={color} />
+        case "contentLeft":
+            return <ContentLeft props={props} color={color} />
+        case "contentCenter":
+            return <ContentCenter props={props} color={color} />
+        case "contentRight":
+            return <ContentRight props={props} color={color} />
         default:
             return;
     }

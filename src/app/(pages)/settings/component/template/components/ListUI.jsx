@@ -6,7 +6,13 @@ import BreakerStar from "./breaker/BreakerStar";
 import BreakerText from "./breaker/BreakerText";
 import BreakerTextColor from "./breaker/BreakerTextColor";
 import CardX3 from "./CardX3";
+import ContentCenter from "./ContentCenter";
+import ContentLeft from "./ContentLeft";
+import ContentRight from "./ContentRight";
 import ThreeRoundImage from "./ThreeRoundImage";
+import VideoCenter from "./VIdeoCenter";
+import VideoLeft from "./VideoLeft";
+import VideoRight from "./VideoRight";
 import WhiteTitleAndImageBackground from "./WhiteTitleAndImageBackground";
 
 export const listUI = [
@@ -58,5 +64,29 @@ export const listUI = [
         id: "BreakerHeart",
         props: ['quantity'],
         UI: <BreakerHeart />
-    },
+    }, {
+        id: "VideoRight",
+        props: ['title1', 'content1', 'link'],
+        UI: <VideoRight />
+    }, {
+        id: "VideoLeft",
+        props: ['title1', 'content1', 'link'],
+        UI: <VideoLeft />
+    }, {
+        id: "VideoCenter",
+        props: ['title1', 'content1', 'link'],
+        UI: <VideoCenter />
+    }, {
+        id: 'contentLeft',
+        props: ['content1'],
+        UI: <ContentLeft />
+    }, {
+        id: 'contentCenter',
+        props: ['content1'],
+        UI: <ContentCenter />
+    }, {
+        id: 'contentRight',
+        props: ['content1'],
+        UI: <ContentRight />
+    }
 ]

@@ -35,15 +35,15 @@ export default function BigCardAndTwoSmallCard({ props }) {
         <div className="flex justify-center items-start flex-wrap gap-2 w-full h-[390px] mt-2">
             <div className="flex flex-col w-[100%] sm:w-[49%] gap-1">
                 <img src={props?.image1} className="h-[200px] w-full bg-gray-200" alt="400x200" />
-                <div className="text-2xl font-semibold">{props?.title1}</div>
-                <div>{props?.content1}</div>
+                <div className="text-2xl font-semibold text-ellipsis overflow-hidden">{props?.title1}</div>
+                <div className="text-ellipsis overflow-hidden">{props?.content1}</div>
             </div>
             <div className="flex flex-col w-[100%]  sm:w-[49%] gap-1">
                 <div className="flex w-[100%] gap-2">
                     <img src={props?.image2} className="h-[175px] max-w-[50%] w-full bg-gray-200" />
                     <div className="flex flex-col gap-1 max-w-[50%] w-full">
-                        <div className="text-2xl font-semibold">{props?.title2}</div>
-                        <div>
+                        <div className="text-2xl font-semibold text-ellipsis overflow-hidden">{props?.title2}</div>
+                        <div className="text-ellipsis overflow-hidden">
                             {props?.content2}
                         </div>
                     </div>
@@ -51,8 +51,8 @@ export default function BigCardAndTwoSmallCard({ props }) {
                 <div className="flex w-[100%] gap-2">
                     <img src={props?.image3} className="h-[175px] max-w-[50%] w-full bg-gray-200" />
                     <div className="flex flex-col gap-1 max-w-[50%] w-full">
-                        <div className="text-2xl font-semibold">{props?.title3}</div>
-                        <div>
+                        <div className="text-2xl font-semibold text-ellipsis overflow-hidden">{props?.title3}</div>
+                        <div className="text-ellipsis overflow-hidden">
                             {props?.content3}
                         </div>
                     </div>

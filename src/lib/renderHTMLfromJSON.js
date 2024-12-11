@@ -55,7 +55,7 @@ export const renderJSONToHTML = (jsonContent) => {
 
 const PreviewComponent = ({ jsonContent }) => {
     return (
-        <div dangerouslySetInnerHTML={{ __html: renderJSONToHTML(jsonContent) }} />
+        <div dangerouslySetInnerHTML={{ __html: renderJSONToHTML(jsonContent) }} className='overflow-hidden' />
     );
 };
 
