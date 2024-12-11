@@ -21,6 +21,9 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang={locale} >
+      <head>
+        <meta name="google-site-verification" content="4wBC0BpF_36K0yjZD2UEIiZ38TdRnCWtE9ef-_wTqaI" />
+      </head>
       <body className={inter.className + 'scroll-smooth'}>
         <NextIntlClientProvider messages={messages}>
           <StoreProvider>
