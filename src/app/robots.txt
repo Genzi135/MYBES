@@ -1,0 +1,42 @@
+# Chặn các công cụ tìm kiếm truy cập vào các thư mục và trang không cần thiết
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /404/
+Disallow: /500/
+Disallow: /api/
+Disallow: /static/
+Disallow: /server-sitemap-index.xml
+Disallow: /_next/
+Disallow: /*.json$
+
+# Chặn các URL động với tham số truy vấn
+Disallow: /*?*
+
+# Cho phép các công cụ tìm kiếm truy cập vào các thư mục và trang quan trọng
+Allow: /recruitment/
+Allow: /consultants/
+Allow: /product/
+Allow: /about/
+Allow: /contact/
+
+# Khai báo đường dẫn tới sitemap để công cụ tìm kiếm có thể dễ dàng tìm thấy và lập chỉ mục
+Sitemap: https://mybes.vn/sitemap.xml
+
+# Cho phép các công cụ tìm kiếm cụ thể hoặc các crawler của Google Ads
+User-agent: Googlebot
+Allow: /
+
+# Chặn các bot không mong muốn
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Các công cụ tìm kiếm khác nếu có nhu cầu đặc biệt
+# User-agent: Bingbot
+# Allow: /

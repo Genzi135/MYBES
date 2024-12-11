@@ -8,14 +8,16 @@
     padding-right: 15px;
     border-radius: 50px;
     display: flex;
+    text-wrap: nowrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    background-color: #00AEFF;
+    background-color: #000000;
     color: #FFFFFF;
 }
 
 .buttonMain:hover {
-    background-color: #007bff;
+    background-color: #606060;
 }
 
 .buttonOutline {
@@ -34,6 +36,7 @@
 .linkButton {
     text-decoration: none;
     padding: 10px;
+    cursor: pointer;
 }
 
 
@@ -94,7 +97,14 @@
 
 .text-7-line {
     display: -webkit-box;
-    -webkit-line-clamp: 7;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.text-4-line {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -131,6 +141,16 @@ ol {
     margin-left: 30px;
     list-style: decimal;
 }
+
+/* a {
+    cursor: pointer;
+    color: #1e00de;
+
+    &:hover {
+        color: #9000de;
+        text-decoration: underline;
+    }
+} */
 
 pre {
     background: #000000;

@@ -2,7 +2,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
-import StoreProvider from "@/redux/StoreProvider";
+import StoreProvider from "@/hook/redux/StoreProvider";
+import { ToastContainer } from "react-toastify";
+import { AuthProvider } from "@/hook/custom/AuhtProvider";
+import { UserProvider } from "@/hook/custom/UserProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,10 +21,15 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang={locale} >
-      <body className={inter.className}>
+      <body className={inter.className + 'scroll-smooth'}>
         <NextIntlClientProvider messages={messages}>
           <StoreProvider>
-            {children}
+            <AuthProvider>
+              <UserProvider>
+                {children}
+              </UserProvider>
+            </AuthProvider>
+            <ToastContainer />
           </StoreProvider>
         </NextIntlClientProvider>
       </body>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BubbleMenu as TipTapBubbleMenu } from '@tiptap/react';
-import { FaBold, FaItalic, FaUnderline, FaStrikethrough, FaLink, FaFont, FaPalette, FaEllipsisH } from 'react-icons/fa';
+import { FaBold, FaItalic, FaUnderline, FaStrikethrough, FaLink, FaFont, FaPalette, FaEllipsisH, FaAlignJustify, FaAlignCenter, FaAlignLeft, FaAlignRight } from 'react-icons/fa';
 
-const BubbleMenu = ({ editor }) => {
+const BubbleMenu = ({ editor, t }) => {
     const [showColorPicker, setShowColorPicker] = useState(false);
 
     if (!editor) {
@@ -10,7 +10,7 @@ const BubbleMenu = ({ editor }) => {
     }
 
     const fontFamilies = [
-        { label: 'Default', value: null },
+        { label: t('Default'), value: null },
         { label: 'Inter', value: 'Inter' },
         { label: 'Comic Sans', value: 'Comic Sans MS' },
         { label: 'Serif', value: 'serif' },
@@ -20,12 +20,12 @@ const BubbleMenu = ({ editor }) => {
     ];
 
     const colors = [
-        { name: 'Orange', code: '#FBBC88' },
-        { name: 'Yellow', code: '#FAF594' },
-        { name: 'Blue', code: '#70CFF8' },
-        { name: 'Green', code: '#6BCB77' },
-        { name: 'Red', code: '#FF6B6B' },
-        { name: 'Purple', code: '#6C5B7B' },
+        { name: t('Orange'), code: '#FBBC88' },
+        { name: t('Yellow'), code: '#FAF594' },
+        { name: t('Blue'), code: '#70CFF8' },
+        { name: t('Green'), code: '#6BCB77' },
+        { name: t('Red'), code: '#FF6B6B' },
+        { name: t('Purple'), code: '#6C5B7B' },
     ];
 
     const handleColorChange = (event) => {
@@ -37,10 +37,10 @@ const BubbleMenu = ({ editor }) => {
         <TipTapBubbleMenu
             editor={editor}
             tippyOptions={{ duration: 100, maxWidth: 'none' }}
-            className="bg-white border border-gray-300 rounded-box shadow-lg p-2 flex space-x-2 w-auto"
+            className="bg-white border flex flex-wrap border-gray-300 rounded-box shadow-lg p-2 gap-2 space-x-2 w-auto"
         >
-            {/* Các nút định dạng văn bản */}
-            <div className="tooltip" data-tip="Bold (Ctrl+B)">
+            {/* Text formatting buttons */}
+            <div className="tooltip" data-tip={t('Bold (Ctrl+B)')}>
                 <button
                     onClick={() => editor.chain().focus().toggleBold().run()}
                     className={`btn border bg-white btn-sm ${editor.isActive('bold') ? 'bg-black text-white' : ''}`}
@@ -48,7 +48,7 @@ const BubbleMenu = ({ editor }) => {
                     <FaBold />
                 </button>
             </div>
-            <div className="tooltip" data-tip="Italic (Ctrl+I)">
+            <div className="tooltip" data-tip={t('Italic (Ctrl+I)')}>
                 <button
                     onClick={() => editor.chain().focus().toggleItalic().run()}
                     className={`btn border bg-white btn-sm ${editor.isActive('italic') ? 'bg-black text-white' : ''}`}
@@ -56,7 +56,7 @@ const BubbleMenu = ({ editor }) => {
                     <FaItalic />
                 </button>
             </div>
-            <div className="tooltip" data-tip="Underline (Ctrl+U)">
+            <div className="tooltip" data-tip={t('Underline (Ctrl+U)')}>
                 <button
                     onClick={() => editor.chain().focus().toggleUnderline().run()}
                     className={`btn border bg-white btn-sm ${editor.isActive('underline') ? 'bg-black text-white' : ''}`}
@@ -64,7 +64,7 @@ const BubbleMenu = ({ editor }) => {
                     <FaUnderline />
                 </button>
             </div>
-            <div className="tooltip" data-tip="Strikethrough (Ctrl+Shift+S)">
+            <div className="tooltip" data-tip={t('Strikethrough (Ctrl+Shift+S)')}>
                 <button
                     onClick={() => editor.chain().focus().toggleStrike().run()}
                     className={`btn border bg-white btn-sm ${editor.isActive('strike') ? 'bg-black text-white' : ''}`}
@@ -73,12 +73,47 @@ const BubbleMenu = ({ editor }) => {
                 </button>
             </div>
 
-            {/* Dropdown chọn font chữ */}
-            <div className="tooltip" data-tip="Font">
+            <div className="tooltip" data-tip={t('Align')}>
+                <div className='dropdown dropdown-hover'>
+                    <label tabIndex={0} className="btn border btn-sm flex items-center space-x-2 bg-white">
+                        <FaAlignJustify />
+                        {/* <span>{t('Font')}</span> */}
+                    </label>
+                    <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-white rounded-box w-52">
+                        <li>
+                            <a
+                                onClick={() => editor.chain().focus().setTextAlign('center').run()}
+                                className='flex gap-2 justify-start items-center'>
+                                <FaAlignCenter />
+                                {t('center')}
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                onClick={() => editor.chain().focus().setTextAlign('right').run()}
+                                className='flex gap-2 justify-start items-center'>
+                                <FaAlignRight />
+                                {t('left')}
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                onClick={() => editor.chain().focus().setTextAlign('left').run()}
+                                className='flex gap-2 justify-start items-center'>
+                                <FaAlignLeft />
+                                {t('right')}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            {/* Font family dropdown */}
+            <div className="tooltip" data-tip={t('Font')}>
                 <div className="dropdown dropdown-hover">
                     <label tabIndex={0} className="btn border btn-sm flex items-center space-x-2 bg-white">
                         <FaFont />
-                        <span>Font</span>
+                        {/* <span>{t('Font')}</span> */}
                     </label>
                     <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-white rounded-box w-52">
                         {fontFamilies.map((font) => (
@@ -95,35 +130,35 @@ const BubbleMenu = ({ editor }) => {
                 </div>
             </div>
 
-            {/* Nút More */}
-            <div className="tooltip" data-tip="More options">
+            {/* More options dropdown */}
+            <div className="tooltip" data-tip={t('More options')}>
                 <div className="dropdown dropdown-hover">
                     <label tabIndex={0} className="btn border btn-sm flex items-center space-x-2 bg-white">
                         <FaEllipsisH />
-                        <span>More</span>
+                        {/* <span>{t('More options')}</span> */}
                     </label>
                     <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-white rounded-box w-52">
                         <li><a onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}>H1</a></li>
                         <li><a onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}>H2</a></li>
                         <li><a onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}>H3</a></li>
-                        <li><a onClick={() => editor.chain().focus().toggleBulletList().run()}>Bullet List</a></li>
-                        <li><a onClick={() => editor.chain().focus().toggleOrderedList().run()}>Number List</a></li>
-                        <li><a onClick={() => editor.chain().focus().toggleBlockquote().run()}>Quote</a></li>
-                        <li><a onClick={() => editor.chain().focus().toggleCodeBlock().run()}>Block Code</a></li>
+                        <li><a onClick={() => editor.chain().focus().toggleBulletList().run()}>{t('Bullet List')}</a></li>
+                        <li><a onClick={() => editor.chain().focus().toggleOrderedList().run()}>{t('Number List')}</a></li>
+                        <li><a onClick={() => editor.chain().focus().toggleBlockquote().run()}>{t('Quote')}</a></li>
+                        <li><a onClick={() => editor.chain().focus().toggleCodeBlock().run()}>{t('Block Code')}</a></li>
                     </ul>
                 </div>
             </div>
 
-            {/* Chọn màu */}
-            <div className="tooltip" data-tip="Text color">
-                <div className="dropdown dropdown-hover relative">
+            {/* Color picker */}
+            <div className="tooltip" data-tip={t('Text color')}>
+                <div className="dropdown dropdown-hover">
                     <button
                         tabIndex={0}
                         className="btn border btn-sm flex items-center space-x-2 bg-white"
                         onClick={() => setShowColorPicker(!showColorPicker)}
                     >
                         <FaPalette />
-                        <span>Color</span>
+                        {/* <span>{t('Color')}</span> */}
                     </button>
                     {showColorPicker && (
                         <ul className="dropdown-content menu p-2 shadow bg-white rounded-box w-52 absolute">
@@ -141,12 +176,12 @@ const BubbleMenu = ({ editor }) => {
                                     </button>
                                 </li>
                             ))}
-                            {/* Nút chọn màu */}
+                            {/* Custom color input */}
                             <li>
                                 <div className="flex items-center gap-2 hover:bg-none">
-                                    <div>Custom:</div>
+                                    <div>{t('Custom')}:</div>
                                     <input
-                                        title="Choose color"
+                                        title={t('Choose color')}
                                         type="color"
                                         onChange={handleColorChange}
                                         className="w-full box-content cursor-pointer"
@@ -158,11 +193,11 @@ const BubbleMenu = ({ editor }) => {
                 </div>
             </div>
 
-            {/* Chèn link */}
-            <div className="tooltip" data-tip="Insert link (Ctrl+K)">
+            {/* Insert link */}
+            <div className="tooltip" data-tip={t('Insert link (Ctrl+K)')}>
                 <button
-                    onClick={() => editor.chain().focus().setLink({ href: prompt('Enter URL') }).run()}
-                    className={`btn border bg-white btn-sm text-black ${editor.getAttributes('link') ? 'bg-black text-white' : ''}`}
+                    onClick={() => editor.chain().focus().setLink({ href: prompt(t('Enter URL')) }).run()}
+                    className={`btn border bg-white btn-sm text-black ${editor.getAttributes('link') ? '' : ''}`}
                 >
                     <FaLink />
                 </button>

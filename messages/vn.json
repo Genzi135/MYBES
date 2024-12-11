@@ -1,7 +1,9 @@
 {
     "HomePage": {
         "new": "Mới",
-        "following": "Đang theo dõi"
+        "following": "Đang theo dõi",
+        "loading": "Đang tải",
+        "noMoreBlogs": "Không còn bài viết mới."
     },
     "Languages": {
         "languages": "Ngôn ngữ",
@@ -12,12 +14,20 @@
     },
     "Authentication": {
         "login": "Đăng nhập",
+        "Invalid credentials": "Email hoặc mật khẩu  không đúng",
+        "nameLabel": "Tên",
+        "nameRequired": "Tên là bắt buộc",
+        "nameMin": "Tên phải có ít nhất 2 ký tự",
+        "nameMax": "Tên không được vượt quá 50 ký tự",
         "emailLabel": "Email",
         "emailInvalid": "Địa chỉ email không hợp lệ",
         "emailRequired": "Email là bắt buộc",
         "passwordLabel": "Mật khẩu",
         "passwordMin": "Mật khẩu phải có ít nhất 6 ký tự",
         "passwordRequired": "Mật khẩu là bắt buộc",
+        "confirmPasswordLabel": "Xác nhận mật khẩu",
+        "passwordsMustMatch": "Mật khẩu không khớp",
+        "confirmPasswordRequired": "Vui lòng xác nhận mật khẩu",
         "termsLabel": "Tôi đồng ý với Điều khoản & Dịch vụ",
         "termsRequired": "Bạn phải đồng ý với điều khoản",
         "forgotPassword": "Quên mật khẩu?",
@@ -27,9 +37,6 @@
         "usernameLabel": "Tên đăng nhập",
         "usernameMin": "Tên đăng nhập phải có ít nhất 2 ký tự",
         "usernameRequired": "Tên đăng nhập là bắt buộc",
-        "confirmPasswordLabel": "Xác nhận mật khẩu",
-        "passwordsMustMatch": "Mật khẩu không khớp",
-        "confirmPasswordRequired": "Vui lòng xác nhận mật khẩu",
         "orLoginWith": "hoặc đăng nhập với",
         "newToMYBES?SinupHere": "Bạn mới đến MYBES? đăng ký ở đây",
         "signup": "Đăng ký",
@@ -44,21 +51,39 @@
         "verify": "Xác thực tài khoản",
         "newPassword": "Mật khẩu mới",
         "confirmNewPassword": "Xác nhận mật khẩu mới",
-        "changePassword": "Đổi mật khẩu"
+        "changePassword": "Đổi mật khẩu",
+        "loginSuccess": "Đăng nhập thành công",
+        "OTP": "Mã OTP",
+        "inputOTP": "Nhập mã OTP",
+        "sendOTP": "Gửi mã OTP",
+        "sentOTP": "Đã gửi mã OTP",
+        "sentOTPplsCheckYourMail": "Đã gửi mã OTP vui lòng kiểm tra email của bạn",
+        "resendOTP": "Gửi lại mã OTP",
+        "resentOTP": "Đã gửi lại mã OTP",
+        "active": "Kích hoạt",
+        "activeAccount": "Kích hoạt tài khoản",
+        "activeSuccess": "Kích hoạt tài khoản thành công",
+        "wrongCode": "Sai mã OTP, vui lòng kiểm tra lại email của bạn",
+        "registerSuccessful": "Đăng ký tài khoản thành công",
+        "emailExist": "Email đã tồn tại",
+        "resetTokenHasBeenSent": "Mã OTP đã được gửi về mail của bạn, vui lòng kiểm tra",
+        "resetPasswordSuccess": "Mật khẩu mới đã gửi về mail của bạn"
     },
     "Navbar": {
+        "notification": "Thông báo",
         "explore": "Khám phá",
         "about": "Về chúng tôi",
         "signup": "Đăng ký",
         "login": "Đăng nhập",
         "profile": "Trang cá nhân",
         "blog": "Blog",
-        "library": "Thư viện",
+        "saved": "Đã lưu",
         "settings": "Cài đặt",
         "helps": "Trợ giúp",
         "logOut": "Đăng xuất",
         "writeNewPost": "Viết bài mới",
-        "shareALink": "Chia sẽ liên kết"
+        "shareALink": "Chia sẽ liên kết",
+        "searchPlaceholder": "Tìm kiếm"
     },
     "Footer": {
         "introduction": "Giới thiệu",
@@ -66,19 +91,89 @@
         "about": "Về chúng tôi",
         "feedBack": "FeedBack",
         "contactUsWith": "Liên hệ với chúng tôi",
-        "or": "hoặc"
+        "or": "hoặc",
+        "contact": "Liên hệ"
     },
     "Write": {
-        "writeNewPost": "Viết bài mới",
-        "shareALink": "Chia sẽ liên kết",
         "title": "Tiêu đề",
-        "URL": "URL",
+        "Upload": "Tải lên",
+        "Review Your Post": "Xem lại bài viết của bạn",
+        "Next": "Tiếp theo",
+        "Close": "Đóng",
+        "Step 2: Add Thumbnail and Description": "Bước 2: Thêm ảnh thumbnail và mô tả",
+        "Preview Thumbnail": "Xem trước ảnh thumbnail",
+        "Description": "Mô tả",
         "description": "Mô tả",
-        "post": "Đăng tải"
+        "Back": "Quay lại",
+        "Upload successful!": "Tải lên thành công!",
+        "Title cannot be empty": "Tiêu đề không được để trống",
+        "Content cannot be empty": "Nội dung không được để trống",
+        "URL": "url",
+        "shareALink": "Chia sẽ liên kết",
+        "post": "Bài viết",
+        "TypeYourMessage": "Nhập câu hỏi...",
+        "Send": "Gửi",
+        "PlsReadChatBotDocs": "Vui lòng đọc kỹ tài liệu trước khi sử dụng",
+        "SendImage": "Tạo ảnh",
+        "SendText": "Tạo văn bản"
+    },
+    "Editor": {
+        "Bold (Ctrl+B)": "In đậm (Ctrl+B)",
+        "Italic (Ctrl+I)": "In nghiêng (Ctrl+I)",
+        "Underline (Ctrl+U)": "Gạch chân (Ctrl+U)",
+        "Strikethrough (Ctrl+Shift+S)": "Gạch ngang (Ctrl+Shift+S)",
+        "Font": "Phông chữ",
+        "Default": "Mặc định",
+        "More options": "Tùy chọn khác",
+        "H1": "Tiêu đề 1",
+        "H2": "Tiêu đề 2",
+        "H3": "Tiêu đề 3",
+        "Bullet List": "Danh sách dấu đầu dòng",
+        "Number List": "Danh sách số thứ tự",
+        "Quote": "Trích dẫn",
+        "Block Code": "Khối mã",
+        "Text color": "Màu chữ",
+        "Color": "Màu chữ",
+        "Orange": "Màu cam",
+        "Yellow": "Màu vàng",
+        "Blue": "Màu xanh da trời",
+        "Green": "Màu xanh lá cây",
+        "Red": "Màu đỏ",
+        "Purple": "Màu tím",
+        "Custom": "Tùy chỉnh",
+        "Choose color": "Chọn màu",
+        "Insert link (Ctrl+K)": "Chèn liên kết (Ctrl+K)",
+        "Enter URL": "Nhập URL",
+        "Image": "Hình ảnh",
+        "Enter image URL": "Nhập URL hình ảnh",
+        "Add Image": "Thêm hình ảnh",
+        "Video": "Video",
+        "Enter video URL": "Nhập URL video",
+        "Add Video": "Thêm video",
+        "placeholder": "Bạn có thể viết gì đó ở đây",
+        "Align": "Định dạng",
+        "center": "Giữa",
+        "right": "Trái",
+        "left": "Phải"
     },
     "Post": {
+        "comment": "Bình luận",
+        "delete": "Xóa",
+        "edit": "Chỉnh sửa",
+        "save": "Lưu",
+        "saved": "Đã lưu",
         "report": "Báo cáo",
-        "copyLink": "Sao chép liên kết"
+        "copyLink": "Sao chép liên kết",
+        "areYouSure": "Bạn có chắc chắn muốn xóa bài viết này?",
+        "close": "Đóng",
+        "confirm": "Xác nhận",
+        "copyLinkSuccess": "Sao chép liên kết thành công",
+        "sharePost": "Chia sẽ bài viết",
+        "share": "Chia sẽ",
+        "deleteSuccess": "Đã xóa bình luận",
+        "goToProfile": "Đến trang cá nhân",
+        "deleteSuccessfully": "Đã xóa bài viết",
+        "profile": "Trang cá nhân"
     },
     "TermsOfService": {
         "termsOfService": "Điều khoản Dịch vụ",
@@ -128,5 +223,168 @@
         "contactUs": "Liên Hệ Với Chúng Tôi",
         "contactUsText": "Nếu bạn có bất kỳ câu hỏi hoặc lo ngại nào về Chính sách Quyền riêng tư này, vui lòng liên hệ với chúng tôi qua: Email: support@yourblog.com, Địa chỉ: [Địa chỉ của bạn].",
         "backToHome": "Quay lại trang chủ"
+    },
+    "Helps": {
+        "create_account_title": "Làm thế nào để tạo tài khoản",
+        "create_account_step1": "Bạn có thể dùng email để đăng ký tài khoản MYBES",
+        "create_account_step2": "Vào trang đăng ký tài khoản của",
+        "create_account_step3": "Nhập Tên, email, password",
+        "create_account_step4": "Đọc kĩ điều khoản và quyền riêng tư trước khi xác nhận, nếu đã xong tích vào ô xác nhận",
+        "create_account_step5": "Bấm nút đăng ký để đăng ký tài khoản",
+        "create_account_step6": "Sau khi đăng ký thành công, sẽ chuyển đến trang kích hoạt tài khoản và sẽ có 1 mail gửi mã kích hoạt về mail của bạn",
+        "create_account_step7": "Nhập email và mã kích hoạt để kích hoạt tài khoản",
+        "create_account_step8": "Như vậy bạn đã đăng ký thành công và có thể sử dụng MYBES",
+        "create_blog_title": "Cách tạo 1 bài blog",
+        "create_blog_step1": "Click vào nút",
+        "create_blog_step2": "Nhập tiêu đề",
+        "create_blog_step3": "Nhập nội dung",
+        "create_blog_step4": "Click vào nút \"Tải lên\"",
+        "create_blog_step5": "Bạn sẽ được xem lại bài viết của mình",
+        "create_blog_step6": "Click \"tiếp theo\"",
+        "create_blog_step7": "Ở đây bạn có thể chọn ảnh làm thumbnail cho bài viết",
+        "create_blog_step8": "Click tải lên để tạo 1 bài viết",
+        "delete_blog_title": "Cách xóa 1 bài blog",
+        "delete_blog_step1": "Click vào nút ... ở góc dưới bên phải của bài blog",
+        "delete_blog_step2": "Click vào xóa bài viết",
+        "delete_blog_step3": "Click xác nhận",
+        "edit_blog_title": "Cách chỉnh sửa bài blog",
+        "edit_blog_step1": "Click vào nút ... ở góc dưới bên phải của bài blog",
+        "edit_blog_step2": "Click vào chỉnh sửa bài viết",
+        "edit_blog_step3": "Thực hiện chỉnh sửa bài viết"
+    },
+    "Contact": {
+        "title": "Liên hệ với chúng tôi",
+        "name_label": "Tên của bạn",
+        "subtitle": "Chúng tôi rất vui khi được nghe từ bạn! Hãy điền vào biểu mẫu dưới đây.",
+        "name_placeholder": "Nhập tên đầy đủ của bạn",
+        "email_label": "Email của bạn",
+        "email_placeholder": "Nhập địa chỉ email của bạn",
+        "message_label": "Tin nhắn của bạn",
+        "message_placeholder": "Viết tin nhắn của bạn tại đây",
+        "submit_button": "Gửi tin nhắn"
+    },
+    "AuthProvider": {
+        "loginRequired": "Bạn cần đăng nhập để truy cập trang này.",
+        "sessionExpired": "Phiên làm việc đã hết hạn. Vui lòng đăng nhập lại."
+    },
+    "UserProvider": {
+        "doNotActive": "Tài khoản chưa được kích hoạt"
+    },
+    "PostPage": {
+        "comments": "Bình luận",
+        "writeYourComment": "Viết bình luận của bạn...",
+        "noComment": "Không có bình luận nào"
+    },
+    "404": {
+        "returnToHome": "Trở về trang chủ",
+        "ohNoNothingHere": "Ôi không! không có gì ở đây rồi :("
+    },
+    "MYBES": {
+        "welcomeMessage": "Xin chào 👋 chào mừng bạn đến với MYBES",
+        "thankYouMessage": "Lời đầu tiên, Cảm ơn vì bạn đã sử dụng dịch vụ của MYBES",
+        "sloganIntro": "MYBES là tên viết tắt bằng cách lấy chữ cái đầu từ slogan của website",
+        "slogan": "\"Make your blog easy & simple\"",
+        "description": "MYBES là một website blog giúp bạn tạo ra một trang web blog của riêng bạn. MYBES cung cấp 1 editor có khả năng tùy chỉnh cao, MYBES còn cung cấp 1 chatbot AI (từ OpenAI) để hỗ trợ người dùng trong lúc viết nội dung. Bên cạnh đó, MYBES còn cung cấp blog API miễn phí nếu như bạn đã có một website riêng của bản thân và muốn tích hợp thêm blog vào website của mình.",
+        "aiChatbotTitle": "Chatbot AI?",
+        "aiChatbotDescription": "MYBES cung cấp một chatbot AI từ OpenAI, chatbot của MYBES có khả năng tương đương với chatGPT 3.5 dùng để hỗ trợ người dùng trong việc viết nội dung của blog. Tuy nhiên, lịch sử chat sẽ không được lưu lại nên dữ liệu sẽ bị mất khi người dùng refresh hay truy cập lại trang web.",
+        "apiTitle": "Cung cấp blog API?",
+        "apiDescription": "Đúng vậy, MYBES sẽ cung cấp các API dùng để lấy dữ liệu tất cả blog của bạn. Đây sẽ là các API chỉ để lấy dữ liệu (GET) và sẽ không thể tác động đến dữ liệu của bạn. Nếu như bạn muốn thay đổi hay chỉnh sửa blog thì bạn sẽ phải chỉnh sửa trên website của MYBES.",
+        "postTitle": "Tiêu đề của bài viết",
+        "postContent": "Nội dung của bài viết"
+    },
+    "Components": {
+        "copyLink": "Sao chép liên kết",
+        "copyLinkSuccess": "Sao chép liên kết thành công",
+        "share": "Chia sẽ",
+        "shareProfile": "Chia sẽ trang cá nhân"
+    },
+    "ChatBotDocs": {
+        "title": "Tài liệu ChatBot AI",
+        "intro": "Chat bot AI của MYBES sử dụng API của OpenAI, với:",
+        "model_text": "Văn bản được hỗ trợ bởi model 'gpt-4o-mini'",
+        "model_image": "Hình ảnh được tạo bởi model 'Dall-e-2'",
+        "free_note": "Bạn có thể sử dụng chat bot AI của MYBES miễn phí, tuy nhiên cần lưu ý:",
+        "warnings": {
+            "testing_feature": "Đây là tính năng thử nghiệm của chat bot AI MYBES",
+            "no_history": "Lịch sử trò chuyện sẽ không được lưu. Nếu bạn làm mới hoặc tải lại trang (F5), tất cả các đoạn hội thoại sẽ bị mất",
+            "independent_questions": "Do chi phí, MYBES không lưu câu hỏi và câu trả lời trước đó để liên kết với các câu hỏi sau. Mỗi câu hỏi là độc lập và AI có thể trả lời khác so với lần trước",
+            "image_generation": "Việc tạo hình ảnh sẽ mất thời gian vì AI cần xử lý. Vui lòng không nhập quá 200 từ khi yêu cầu tạo ảnh. Ảnh được tạo bởi AI sẽ được MYBES lưu lại và sẽ không bị mất sau 5 phút như OpenAI",
+            "er": "Nếu chat bot ngừng hoạt động hoặc gặp lỗi, vui lòng liên hệ với chúng tôi để được khắc phục sớm nhất"
+        },
+        "thank_you": "Cảm ơn bạn đã sử dụng tính năng này ❤️",
+        "contact": "Liên hệ"
+    },
+    "AccountSetting": {
+        "name": {
+            "label": "Tên",
+            "button": "Thay đổi",
+            "empty": "Vui lòng nhập tên!",
+            "success": "Tên đã được cập nhật!"
+        },
+        "avatar": {
+            "label": "Ảnh đại diện",
+            "button": "Thay đổi",
+            "no_file": "Chưa chọn tệp!",
+            "success": "Ảnh đại diện đã được cập nhật!"
+        },
+        "active": {
+            "label": "Kích hoạt tài khoản",
+            "button": "Kích hoạt",
+            "success": "Tài khoản đã được kích hoạt!"
+        },
+        "otp": {
+            "button": "Lấy mã OTP",
+            "placeholder": "OTP",
+            "sent": "Mã OTP đã được gửi đến email của bạn!"
+        },
+        "password": {
+            "label": "Đổi mật khẩu",
+            "new": "Mật khẩu mới",
+            "confirm": "Xác nhận mật khẩu",
+            "button": "Đổi mật khẩu",
+            "fill_all": "Vui lòng điền đầy đủ thông tin!",
+            "mismatch": "Mật khẩu không khớp!",
+            "success": "Mật khẩu đã được đổi thành công!"
+        }
+    },
+    "Search": {
+        "search": "Tìm kiếm",
+        "startingToSearch": "Bắt đầu tìm kiếm",
+        "User": "Người dùng",
+        "user": "người dùng",
+        "no": "Không có",
+        "notFoundFor": "tìm thấy cho"
+    },
+    "Profile": {
+        "profile": "Trang cá nhân",
+        "blogs": "Blogs",
+        "saved": "Đã lưu",
+        "account": "Tài khoản",
+        "youHaveNoSavedBlog": "Bạn không có lưu blog nào"
+    },
+    "ProfileSetting": {
+        "color": "Màu",
+        "returnToDefault": "Trở về mặt định",
+        "change": "Thay đổi",
+        "select": "Chọn",
+        "delete": "Xóa",
+        "confirmDelete": "Xác nhận xóa",
+        "confirm": "Xác nhận",
+        "close": "Đóng",
+        "changeHeader": "Thay đổi header",
+        "confirmChange": "Xác nhận thay đổi",
+        "header": "Header",
+        "body": "Body",
+        "addComponent": "Thêm thành phần",
+        "changeData": "Thay đổi dữ liệu",
+        "inputData": "Nhập dữ liệu",
+        "changeSuccessful": "Thay đổi thành công",
+        "component": "Thành phần",
+        "breaker": "Ngăn cách"
+    },
+    "Form": {
+        "submit": "Gửi",
+        "select": "Chọn",
+        "noRequireFields": "Không có dữ liệu cần nhập"
     }
 }

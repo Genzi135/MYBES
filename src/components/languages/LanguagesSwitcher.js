@@ -47,7 +47,7 @@ export default function LanguageSwitcher() {
                 aria-expanded={isDropdownOpen}
             >
                 <HiLanguage size={18} />
-                <span>{t('languages')}</span>
+                <span className="hidden sm:block">{t('languages')}</span>
             </button>
             {isDropdownOpen && (
                 <ul

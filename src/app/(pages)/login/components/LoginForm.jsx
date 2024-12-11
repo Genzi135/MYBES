@@ -10,7 +10,7 @@ export default function LoginForm() {
     const { formData, errors, isLoading, handleChange, handleSubmit } = useLoginForm();
 
     return (
-        <div className="max-w-[500px] w-full h-auto flex flex-col justify-center items-center gap-5">
+        <div className="max-w-[500px] w-full h-auto flex flex-col justify-center items-center gap-5 p-3 sm:p-0">
             <label className="label p-10">{t('login')}</label>
             <form onSubmit={handleSubmit} className="space-y-4 w-full">
                 <input
@@ -38,13 +38,13 @@ export default function LoginForm() {
                     className="buttonMain w-full h-[50px]"
                     disabled={isLoading}
                 >
-                    {isLoading ? <span class="loading loading-dots loading-md"></span> : t('login')}
+                    {isLoading ? <span className="loading loading-dots loading-md"></span> : t('login')}
                 </button>
             </form>
             <div className="w-full h-auto flex justify-end items-center mr-10 text-[#A9A9A9] hover:underline">
                 <Link href="/forgot-password">{t('forgotPassword')}</Link>
             </div>
-            <div className="w-full h-full flex justify-center items-center text-[#A9A9A9]">
+            {/* <div className="w-full h-full flex justify-center items-center text-[#A9A9A9]">
                 <label>{t('orLoginWith')}</label>
             </div>
             <div className="w-full h-auto p-5">
@@ -52,9 +52,9 @@ export default function LoginForm() {
                     <BsGoogle />
                     Google
                 </button>
-            </div>
+            </div> */}
             <div className="w-full h-auto flex justify-center items-center mr-10 text-[#A9A9A9] hover:underline">
-                <Link href="/signup">{t('newToMYBES?SinupHere')}</Link>
+                <Link href="/register">{t('newToMYBES?SinupHere')}</Link>
             </div>
         </div>
     );

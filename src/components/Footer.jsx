@@ -19,16 +19,15 @@ export default function Footer() {
                     </label>
                 </div>
                 <div className="flex flex-col gap-2">
-                    <Link href={`/mybes`}>{t('introduction')}</Link>
-                    <Link href={`/`}>{t('home')}</Link>
-                    <Link href={`/about`}>{t('about')}</Link>
-                    <Link href={`/`}>{t('feedBack')}</Link>
+                    <Link href={`/mybes.html`} className="hover:font-semibold">{t('introduction')}</Link>
+                    <Link href={`/`} className="hover:font-semibold">{t('home')}</Link>
+                    <Link href={`/contact`} className="hover:font-semibold">{t('contact')}</Link>
                 </div>
                 <div className="flex flex-col gap-1">
                     <label>
                         {t('contactUsWith')}
                     </label>
-                    <div className="flex gap-4 justify-start items-center">
+                    {/* <div className="flex gap-4 justify-start items-center">
                         <Link href={`/`}>
                             <BsFacebook size={30} />
                         </Link>
@@ -41,10 +40,10 @@ export default function Footer() {
                     </div>
                     <label>
                         {t('or')}
-                    </label>
+                    </label> */}
                     <div className="flex gap-2 items-center">
                         <BsGoogle size={20} />
-                        mybes@gmail.com
+                        blogmybes@gmail.com
                     </div>
                 </div>
             </div>
