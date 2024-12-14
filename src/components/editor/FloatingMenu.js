@@ -29,6 +29,12 @@ const FloatingMenu = ({ editor, t }) => {
         }
     };
 
+    const addLinkImage = (link) => {
+        if (link) {
+            editor.chain().focus().setImage({ src: link }).run();
+        }
+    }
+
     const addYoutubeVideo = () => {
         if (videoUrl) {
             editor.commands.setYoutubeVideo({
@@ -123,7 +129,7 @@ const FloatingMenu = ({ editor, t }) => {
                             className="input input-bordered input-sm w-full"
                         />
                         <button
-                            onClick={() => addImage(imageUrl)}
+                            onClick={() => addLinkImage(imageUrl)}
                             className="btn btn-sm btn-primary mt-2 w-full"
                         >
                             {t('Add Image')}
