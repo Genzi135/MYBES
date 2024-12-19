@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import PostPage from "./PostPage";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { deleteBlog, getBlogById, saveBlog } from "@/shared/blogAPI";
+import { deleteBlog, getBlogById, reportBlog, saveBlog, toggleComment } from "@/shared/blogAPI";
 import { useDispatch, useSelector } from "react-redux";
 import { removeOneBlog, setCurrentBlog, setSaveBlog } from "@/hook/redux/features/blogSlice";
 import NotFoundPost from "./NotFoundPost";
@@ -20,6 +20,7 @@ export default function PostFullPage() {
     const dispatch = useDispatch();
     const currentBlogData = useSelector(state => state.blog.currentBlog);
     const userData = useSelector(state => state.user.user)
+    const [inputReport, setInputReport] = useState('');
 
     const router = useRouter()
 
@@ -78,6 +79,30 @@ export default function PostFullPage() {
         router.push('/edit/' + id)
     }
 
+    const handleToggleComment = async () => {
+        console.log("handle");
+        try {
+            const token = window.localStorage.getItem('token');
+            const response = await toggleComment(token, postData.id)
+            if (response) {
+                console.log(response);
+                dispatch(setCurrentBlog(response.data.data))
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const handleReport = async () => {
+        const token = window.localStorage.getItem('token');
+        if (postData.id) {
+            await reportBlog(token, postData.id, inputReport);
+            toast.success(t('reportSuccess'))
+            setInputReport('');
+        }
+        document.getElementById('modal_report').close();
+    }
+
     useEffect(() => {
         fetchBlogData();
     }, []);
@@ -130,6 +155,21 @@ export default function PostFullPage() {
                                 {userData?.email === postData.author.email && <li><div
                                     onClick={() => handleDeleteButtonClick()}
                                     className="flex justify-start items-center gap2 text-red-500"><BsTrash size={18} />{t('delete')}</div></li>}
+                                {userData && <li>
+                                    <div onClick={() => document.getElementById('modal_report').showModal()}>
+                                        {t('report')}
+                                    </div>
+                                </li>}
+                                {userData?.email === postData.author.email && !postData?.allowComment && <li>
+                                    <div onClick={() => handleToggleComment()}>
+                                        {t('blockComment')}
+                                    </div>
+                                </li>}
+                                {userData?.email === postData.author.email && postData?.allowComment && <li>
+                                    <div onClick={() => handleToggleComment()}>
+                                        {t('allowComment')}
+                                    </div>
+                                </li>}
 
                             </ul>
                         </div>
@@ -157,6 +197,25 @@ export default function PostFullPage() {
                     </div>
                 </div>
             </dialog>
+
+            <dialog id="modal_report" className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg">Report</h3>
+                    <p className="py-4">{t('inputContentReport')}</p>
+                    <input
+                        type="text"
+                        className="input input-bordered w-full"
+                        value={inputReport}
+                        onChange={(e) => setInputReport(e.target.value)} // Corrected this line
+                    />
+                    <div className="modal-action gap-2">
+                        <button className="btn btn-error" onClick={handleReport}>{t('confirm')}</button>
+                        <button className="btn" onClick={() => document.getElementById('modal_report').close()}>{t('close')}</button>
+                    </div>
+                </div>
+            </dialog>
+
+
         </div>
     );
 }

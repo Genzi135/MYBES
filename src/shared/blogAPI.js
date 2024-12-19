@@ -133,3 +133,30 @@ export const getSavedBlogsWithUser = async (token, page) => {
     }
 }
 
+export const toggleComment = async (token, id) => {
+    try {
+        const response = await axios({
+            url: BASE_URL + `/blogs/allowComment/${id}`,
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', "Authorization": `Bearer ${token}` }
+        })
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const reportBlog = async (token, id, content) => {
+    try {
+        const response = await axios({
+            url: BASE_URL + `/blogs/report/${id}`,
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', "Authorization": `Bearer ${token}` },
+            data: { content: content }
+        })
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+

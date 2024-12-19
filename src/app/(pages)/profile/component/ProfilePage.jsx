@@ -12,6 +12,8 @@ import { addBlogsProfile, setListBlogProfile } from "@/hook/redux/features/profi
 import PostSave from "@/components/post/PostSave";
 import { useParams, usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { renderHeader } from "../../settings/component/HeaderRender";
+import { renderFooter } from "../../settings/component/FooterRender";
 
 export default function ProfilePage() {
     const userData = useSelector(state => state.user.user);
@@ -205,7 +207,6 @@ export default function ProfilePage() {
                     )}
                 </div>
             )}
-
         </div>
     );
 }

@@ -137,7 +137,7 @@ export default function PostPage({ data }) {
 
             <ReviewComponent jsonContent={data.contentJSON} />
 
-            {userData && (
+            {userData && !data?.allowComment && (
                 <div className="w-full mt-20">
                     <div className="flex justify-center items-center gap-4 w-full mb-2">
                         {userData?.avatar_url && (
