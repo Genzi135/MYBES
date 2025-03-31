@@ -45,18 +45,13 @@ export default function MYBESpage() {
                 </div>
                 <div>
                     MYBES là dự án tốt nghiệp của mình. Dự án bắt đầu được lên ý tưởng, thiết kế và hiện thực từ 8/2024 và hoàn thành vào
-                    11/2024. Ý tưởng dự án được thầy Th.s Nguyễn Trọng Tiến đưa ra cho mình. Ban đầu sẽ là một blog website về công nghệ
-                    (hoặc tương tự Medium.com) nhưng mình đã xin phép thầy để có thể thay đổi về mục đích của website khi khảo sát, hỏi ý kiến
-                    từ bạn bè, người quen trên mạng xã hội và những anh chị content creator. Khi ai cũng có nhu cầu muốn có một website cá nhân hóa
+                    11/2024. Khi ai cũng có nhu cầu muốn có một website cá nhân hóa
                     mà rào cản lớn nhất là &quot;giá cả làm website khá cao&quot;, mình đã nảy ra ý tưởng làm một blog website có thể tùy chỉnh
                     trang cá nhân, chia sẻ dữ liệu bài blog và tối ưu hóa SEO cho người dùng. Và thế là MYBES được hiện thực hóa.
                 </div>
 
                 <div className="mt-4 sm:text-2xl text-xl font-semibold cursor-default border-b border-black">Lời cảm ơn</div>
-                <div>
-                    Em xin được trân trọng gửi lời cảm ơn đến Th.s Nguyễn Trọng Tiến vì đã chấp nhận, cho phép thực hiện, đồng hành và hỗ trợ em
-                    trong lúc thực hiện dự án lần này. Cảm ơn thầy rất nhiều vì những lời khuyên, góp ý và chỉ dẫn quý báu.
-                </div>
+                
                 <div>
                     Em xin gửi lời cảm ơn đến bạn bè, anh chị đã góp ý để em hoàn thiện dự án, sửa chữa những lỗi còn tồn tại trong website. Cảm ơn
                     mọi người rất nhiều vì động lực mà mọi người đã tạo ra.
